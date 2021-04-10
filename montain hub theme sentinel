@@ -6,13 +6,13 @@ if game.PlaceId == 155615604 then
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
 
-    MainSection:NewDropdown("Give Gun", "Gives the localplayer a gun", {"M9", "Remington 870", "AK-47"}, function(v)
+    MainSection:NewDropdown("Give Gun", "Working", {"M9", "Remington 870", "AK-47"}, function(v)
         local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
     end)
 
-    MainSection:NewDropdown("Gun Mod", "Makes the gun op", {"M9", "Remington 870", "AK-47"}, function(v)
+    MainSection:NewDropdown("Gun Mod", "Working", {"M9", "Remington 870", "AK-47"}, function(v)
         local module = nil
         if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
             module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -36,11 +36,11 @@ if game.PlaceId == 155615604 then
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
 
-    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+    PlayerSection:NewSlider("Walkspeed", "Working", 250, 16, function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
     end)
 
-    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+    PlayerSection:NewSlider("Jumppower", "Working", 250, 50, function(v)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     end)
 elseif game.PlaceId == 3956818381 then
@@ -51,7 +51,7 @@ elseif game.PlaceId == 3956818381 then
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
 
-    MainSection:NewToggle("Auto Swing", "autoswing", function(v)
+    MainSection:NewToggle("Auto Swing", "Working", function(v)
         getgenv().autoswing = v
         while true do
             if not getgenv().autoswing then return end
@@ -68,7 +68,7 @@ elseif game.PlaceId == 3956818381 then
         end
     end)
 
-    MainSection:NewToggle("Auto Sell", "autosell", function(v)
+    MainSection:NewToggle("Auto Sell", "Working", function(v)
         getgenv().autosell = v
         while true do
             if getgenv().autoswing == false then return end
@@ -79,7 +79,7 @@ elseif game.PlaceId == 3956818381 then
         end
     end)
 
-    MainSection:NewButton("Unlock all islands", "Unlocks all islands", function()
+    MainSection:NewButton("Unlock all islands", "Working", function()
         local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         for _,v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -89,7 +89,7 @@ elseif game.PlaceId == 3956818381 then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
     end)
     
-    MainSection:NewToggle("Auto buy all swords", "Auto buys all swords", function(v)
+    MainSection:NewToggle("Auto buy all swords", "Working", function(v)
         getgenv().buyswords = v
         while true do
             if not getgenv().buyswords then return end
@@ -101,7 +101,7 @@ elseif game.PlaceId == 3956818381 then
         end
     end)
 
-    MainSection:NewToggle("Auto buy all belts", "Auto buys", function(v)
+    MainSection:NewToggle("Auto buy all belts", "Working", function(v)
         getgenv().buybelts = v
         while true do
             if not getgenv().buybelts then return end
@@ -122,7 +122,7 @@ elseif game.PlaceId == 286090429 then
     local Misc = Window:NewTab("Misc")
     local MiscSection = Misc:NewSection("Misc")
 
-    MiscSection:NewToggle("Inf jump", "a", function(v)
+    MiscSection:NewToggle("Inf jump", "Patched", function(v)
         _G.JumpHeight = 50;
  
         function Action(Object, Function) if Object ~= nil then Function(Object); end end
@@ -139,7 +139,7 @@ elseif game.PlaceId == 286090429 then
             end
         end)
     end)
-    MainSection:NewToggle("hit box", "hit box", function(v)
+    MainSection:NewToggle("hit box", "Working", function(v)
         function getnames()
             for i, v in pairs(game:GetChildren()) do
                 if v.ClassName == "Players" then
@@ -174,7 +174,7 @@ elseif game.PlaceId == 286090429 then
         )
     end)
 
-    MainSection:NewToggle("Tracers", "Tracers", function(v)
+    MainSection:NewToggle("Tracers", "Working", function(v)
         local lplr = game.Players.LocalPlayer
 local camera = game:GetService("Workspace").CurrentCamera
 local CurrentCamera = workspace.CurrentCamera
@@ -253,7 +253,7 @@ end)
 
 
     
-    MainSection:NewToggle("Box", "Box", function(v)
+    MainSection:NewToggle("Box", "Working", function(v)
     
 
 local lplr = game.Players.LocalPlayer
@@ -514,7 +514,7 @@ elseif game.PlaceId == 621129760 then
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
 
-    MainSection:NewToggle("box", "box", function(v)
+    MainSection:NewToggle("box", "Patched", function(v)
       
 
 local lplr = game.Players.LocalPlayer
@@ -771,7 +771,7 @@ end)
 
     
     
-    MainSection:NewToggle("Tracers", "Tracers", function(v)
+    MainSection:NewToggle("Tracers", "Working", function(v)
         local lplr = game.Players.LocalPlayer
         local camera = game:GetService("Workspace").CurrentCamera
         local CurrentCamera = workspace.CurrentCamera
@@ -847,7 +847,7 @@ end)
             coroutine.wrap(lineesp)()
         end)
     end)
-    MainSection:NewToggle("hit box", "hit box", function(v)
+    MainSection:NewToggle("hit box", "Working +-", function(v)
         function getnames()
             for i, v in pairs(game:GetChildren()) do
                 if v.ClassName == "Players" then
