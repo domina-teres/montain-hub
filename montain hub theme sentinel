@@ -1,6 +1,6 @@
 if game.PlaceId == 155615604 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Prison Life - beta", "Sentinel")
+    local Window = Library.CreateLib("Prison Life -  Montain Hub Beta", "Midnight")
 
     -- MAIN
     local Main = Window:NewTab("Main")
@@ -45,7 +45,7 @@ if game.PlaceId == 155615604 then
     end)
 elseif game.PlaceId == 3956818381 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Ninja Legends - beta", "Synapse")
+    local Window = Library.CreateLib("Ninja Legends -  Montain Hub Beta", "Midnight")
 
     -- MAIN
     local Main = Window:NewTab("Main")
@@ -114,12 +114,31 @@ elseif game.PlaceId == 3956818381 then
     end)
 elseif game.PlaceId == 286090429 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Arsenal - beta", "Sentinel")
+    local Window = Library.CreateLib("Arsenal -  Montain Hub Beta", "Midnight")
 
     -- MAIN
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Main")
+    local Misc = Window:NewTab("Misc")
+    local MiscSection = Misc:NewSection("Misc")
 
+    MiscSection:NewToggle("Inf jump", "a", function(v)
+        _G.JumpHeight = 50;
+ 
+        function Action(Object, Function) if Object ~= nil then Function(Object); end end
+         
+        UIS.InputBegan:connect(function(UserInput)
+            if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+                Action(Player.Character.Humanoid, function(self)
+                    if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                        Action(self.Parent.HumanoidRootPart, function(self)
+                            self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                        end)
+                    end
+                end)
+            end
+        end)
+    end)
     MainSection:NewToggle("hit box", "hit box", function(v)
         function getnames()
             for i, v in pairs(game:GetChildren()) do
@@ -489,7 +508,7 @@ end)
     end)
 elseif game.PlaceId == 621129760 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("kat - beta", "Sentinel)
+    local Window = Library.CreateLib("kat -  Montain Hub Beta", "Midnight")
 
     -- MAIN
     local Main = Window:NewTab("Main")
